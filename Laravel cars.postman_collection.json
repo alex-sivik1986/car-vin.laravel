@@ -39,6 +39,14 @@
 			"response": []
 		},
 		{
+			"name": "Delete",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
 			"name": "Search name, number, vin-code",
 			"request": {
 				"method": "GET",
@@ -66,15 +74,29 @@
 			"name": "Mark autocomplete",
 			"request": {
 				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Delete",
-			"request": {
-				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/auto/autocmplete?mark=fo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auto",
+						"autocmplete"
+					],
+					"query": [
+						{
+							"key": "mark",
+							"value": "fo"
+						}
+					]
+				}
 			},
 			"response": []
 		}

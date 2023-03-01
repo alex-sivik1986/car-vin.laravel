@@ -24,8 +24,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('update:autodata')
-            ->monthly();
+        $schedule->command('update:makes')
+            ->monthly()->after(function($schedule) {
+                $schedule->command('update:models');
+            });
+
     }
 
     /**

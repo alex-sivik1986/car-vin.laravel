@@ -17,14 +17,8 @@ use Maatwebsite\Excel\Facades\Excel;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::apiResources([
     'auto' => \App\Http\Controllers\Api\AutoController::class,
 ]);
 
-Route::get('/auto/export', function (\App\Http\Filters\CarFilter $car) {
-    return Excel::download(new ExportCar($car), 'cars.xlsx', \Maatwebsite\Excel\Excel::XLSX);
-})->name('auto.export');
+Route::get('/autocomplete', [\App\Http\Controllers\Api\MakeController::class, 'autocomplete'])->name('auto.autocomplete');

@@ -22,7 +22,5 @@ class VinDecoderServices
         } else {
             return ['make' => '','year' => '','model' => '',];
         }
-
-
     }
 }

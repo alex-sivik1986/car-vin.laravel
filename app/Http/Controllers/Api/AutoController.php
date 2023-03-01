@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Api;
 use App\Exports\ExportCar;
 use App\Http\Controllers\Controller;
 use App\Http\Filters\CarFilter;
+use App\Http\Filters\MakeFilter;
 use App\Http\Requests\CarFormRequest;
 use App\Http\Resources\CarResource;
 use App\Models\Car;
+use App\Models\Make;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -82,6 +84,12 @@ class AutoController extends Controller
         if($car){
             return ['result'=>'Record has been deleted'];
         }
+    }
+
+    public function autocomplete(Make $make)
+    {
+        dd(1111111111111);
+        return Make::filter($make)->paginate(10);
     }
 
 }
